@@ -24,6 +24,9 @@ test("academic profile contains current publication content", async () => {
   assert.match(html, /RESCAPE: A Resource Estimation System/);
   assert.match(html, /IEEE JCC[\s\S]*CCF-C/);
   assert.match(html, /mailto:wang_jinghao@buaa\.edu\.cn/);
+  assert.match(html, /AI Infrastructure Intern/);
+  assert.match(html, /ByteDance · TikTok Lumen AI Infra/);
+  assert.match(html, /job submission, scheduling, preemption, and production operations/);
 });
 
 test("page avoids placeholder links and exposes essential metadata", async () => {

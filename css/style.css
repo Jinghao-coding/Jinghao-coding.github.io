@@ -872,6 +872,12 @@ footer {
   color: var(--ink-soft);
 }
 
+.timeline .timeline__description {
+  max-width: 760px;
+  margin-top: 0.55rem;
+  font-size: 0.9rem;
+}
+
 /* Service */
 .service-grid {
   display: grid;
