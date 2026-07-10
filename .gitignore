@@ -13,6 +13,10 @@ Thumbs.db
 
 # Node (if added later)
 node_modules/
+_sites/dist/
+_sites/.wrangler/
+_sites/.vinext/
+_sites/.next/
 
 # Misc
 *.log

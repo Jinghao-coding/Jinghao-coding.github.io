@@ -1,0 +1,34 @@
+import assert from "node:assert/strict";
+import { access, readFile } from "node:fs/promises";
+import test from "node:test";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const testDirectory = dirname(fileURLToPath(import.meta.url));
+const adapterRoot = resolve(testDirectory, "..");
+const htmlPath = resolve(adapterRoot, "dist", "client", "index.html");
+
+test("build contains deployable worker and metadata", async () => {
+  await access(resolve(adapterRoot, "dist", "server", "index.js"));
+  await access(resolve(adapterRoot, "dist", ".openai", "hosting.json"));
+});
+
+test("academic profile contains current publication content", async () => {
+  const html = await readFile(htmlPath, "utf8");
+
+  assert.match(html, /DeepShare: Assurance-Driven Deep Learning Job Scheduling/);
+  assert.match(html, /Jinghao Wang<\/strong>, Yihang Zhou, Xiao Zhou, Xinlei Zheng/);
+  assert.match(html, /IEEE CLUSTER/);
+  assert.match(html, /Maestro: Workload-Aware Cross-Cluster Scheduling/);
+  assert.match(html, /RESCAPE: A Resource Estimation System/);
+});
+
+test("page avoids placeholder links and exposes essential metadata", async () => {
+  const html = await readFile(htmlPath, "utf8");
+
+  assert.doesNotMatch(html, /href=["']#["']/);
+  assert.match(html, /<html lang="en">/);
+  assert.match(html, /rel="canonical"/);
+  assert.match(html, /aria-controls="navLinks"/);
+  assert.match(html, /figs\/og\.png/);
+});
