@@ -20,7 +20,10 @@ test("academic profile contains current publication content", async () => {
   assert.match(html, /Jinghao Wang<\/strong>, Yihang Zhou, Xiao Zhou, Xinlei Zheng/);
   assert.match(html, /IEEE CLUSTER/);
   assert.match(html, /Maestro: Workload-Aware Cross-Cluster Scheduling/);
+  assert.match(html, /IEEE ICDCS[\s\S]*CCF-B/);
   assert.match(html, /RESCAPE: A Resource Estimation System/);
+  assert.match(html, /IEEE JCC[\s\S]*CCF-C/);
+  assert.match(html, /mailto:wang_jinghao@buaa\.edu\.cn/);
 });
 
 test("page avoids placeholder links and exposes essential metadata", async () => {
