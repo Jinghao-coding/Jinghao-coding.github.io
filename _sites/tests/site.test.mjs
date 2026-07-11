@@ -22,6 +22,7 @@ test("academic profile contains current publication content", async () => {
   assert.match(html, /Maestro: Workload-Aware Cross-Cluster Scheduling/);
   assert.match(html, /IEEE ICDCS[\s\S]*CCF-B/);
   assert.match(html, /LogAD: A Multi-Feature Fusion Approach for Log Anomaly Detection/);
+  assert.match(html, /id="pub-logad"/);
   assert.match(html, /Guangzu Wang, Lingzhi Zhang, <strong>Jinghao Wang<\/strong>, Tianyu Wo, Xu Wang, Chunming Hu/);
   assert.match(html, /10\.1109\/JCC67032\.2025\.00016/);
   assert.match(html, /RESCAPE: A Resource Estimation System/);
@@ -30,6 +31,8 @@ test("academic profile contains current publication content", async () => {
   assert.match(html, /AI Infrastructure Intern/);
   assert.match(html, /ByteDance · TikTok Lumen AI Infra/);
   assert.match(html, /job submission, scheduling, preemption, and production operations/);
+  assert.match(html, /Selected Publications/);
+  assert.match(html, /Research Interests/);
 });
 
 test("page avoids placeholder links and exposes essential metadata", async () => {
