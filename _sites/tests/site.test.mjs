@@ -21,6 +21,9 @@ test("academic profile contains current publication content", async () => {
   assert.match(html, /IEEE CLUSTER/);
   assert.match(html, /Maestro: Workload-Aware Cross-Cluster Scheduling/);
   assert.match(html, /IEEE ICDCS[\s\S]*CCF-B/);
+  assert.match(html, /LogAD: A Multi-Feature Fusion Approach for Log Anomaly Detection/);
+  assert.match(html, /Guangzu Wang, Lingzhi Zhang, <strong>Jinghao Wang<\/strong>, Tianyu Wo, Xu Wang, Chunming Hu/);
+  assert.match(html, /10\.1109\/JCC67032\.2025\.00016/);
   assert.match(html, /RESCAPE: A Resource Estimation System/);
   assert.match(html, /IEEE JCC[\s\S]*CCF-C/);
   assert.match(html, /mailto:wang_jinghao@buaa\.edu\.cn/);
