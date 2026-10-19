@@ -6,7 +6,7 @@ Personal academic website for [Jinghao Wang](https://jinghao-coding.github.io/),
 
 - `index.html` — site content and metadata
 - `css/style.css` — visual system and responsive layout
-- `js/main.js` — accessible mobile navigation and section tracking
+- `js/main.js` — footer year; navigation works without JavaScript
 - `figs/` — portrait and social preview image
 - `_sites/` — lightweight packaging adapter for private OpenAI Sites deployment
 
